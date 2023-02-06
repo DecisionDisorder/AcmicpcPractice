@@ -1,10 +1,9 @@
 #include <iostream>
-#include <cmath>
+#include <algorithm>
 
 using namespace std;
 
 int* sorted;
-int frequency[8001] = {0};
 
 void merge(int* arr, int left, int mid, int right)
 {
@@ -37,6 +36,7 @@ void partition(int* arr, int left, int right)
 		partition(arr, mid + 1, right);
 		merge(arr, left, mid, right);
 	}
+
 }
 
 void sort(int* arr, int n)
@@ -45,59 +45,47 @@ void sort(int* arr, int n)
 	partition(arr, 0, n - 1);
 }
 
-int getMostFrequency(int* arr, int n)
+bool binarySearch(int *arr, int left, int right, int targetNum)
 {
-	int max = 1, maxIndex = 0, maxCount = 0;
-	for (int i = 0; i < n; i++)
+	int middle = (left + right) / 2;
+	if (left <= right)
 	{
-		if (arr[i] >= max)
-		{
-			max = arr[i];
-		}
+		if (targetNum < arr[middle])
+			return binarySearch(arr, left, middle - 1, targetNum);
+		else if (targetNum > arr[middle])
+			return binarySearch(arr, middle + 1, right, targetNum);
+		else
+			return true;
 	}
-
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] == max)
-		{
-			maxCount++;
-			maxIndex = i;
-			if (maxCount == 2)
-				break;
-		}
-	}
-
-	return maxIndex - 4000;
+	else
+		return false;
 }
 
 int main()
 {
-	int n, sum = 0;
-	scanf("%d", &n);
+	int N, M;
+	scanf("%d", &N);
+	int* A = new int[N];
+	int* B;
 
-	int* numArray = new int[n];
+	for (int i = 0; i < N; i++)
+		scanf("%d", A + i);
 
-	for (int i = 0; i < n; i++) 
+	scanf("%d", &M);
+	B = new int[M];
+	for (int i = 0; i < M; i++)
+		scanf("%d", B + i);
+
+	sort(A, N);
+
+	for (int i = 0; i < M; i++)
 	{
-		scanf("%d", numArray + i);
-		sum += numArray[i];
-		frequency[numArray[i] + 4000]++;
+		if (binarySearch(A, 0, N - 1, B[i]))
+			printf("1\n");
+		else
+			printf("0\n");
 	}
 
-	sort(numArray, n);
 
-	int avg = round((double)sum / n);
-	printf("%d\n", avg);
-	printf("%d\n", numArray[n / 2]);
-	printf("%d\n", getMostFrequency(frequency, 8001));
-	if (n > 1)
-	{
-		printf("%d", numArray[n - 1] - numArray[0]);
-	}
-	else
-	{
-		printf("0");
-	}
-	
 	return 0;
 }

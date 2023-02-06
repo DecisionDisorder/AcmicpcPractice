@@ -24,7 +24,7 @@ int main()
 
 	return 0;
 }
-
+ 
 bool checkPrimaryNumber(int num)
 {
 	if (num == 1)
