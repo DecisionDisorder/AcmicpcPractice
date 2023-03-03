@@ -4,14 +4,14 @@
 using namespace std;
 
 
-class Position {
+class Apartment {
 public:
 	int row;
 	int col;
 
-	Position() {}
+	Apartment() {}
 
-	Position(int row, int col)
+	Apartment(int row, int col)
 	{
 		setPosition(row, col);
 	}
@@ -25,7 +25,7 @@ public:
 
 class Tomato {
 public:
-	Position pos;
+	Apartment pos;
 	int status;
 	bool visited;
 	int level;
@@ -53,7 +53,7 @@ void visit(Tomato* tomato, queue<Tomato*>& que, const Tomato* priorTomato)
 	}
 }
 
-void search(Tomato** tomatoBox, queue<Tomato*> que, const Position& limitPos)
+void search(Tomato** tomatoBox, queue<Tomato*> que, const Apartment& limitPos)
 {
 	while (!que.empty())
 	{
@@ -74,7 +74,7 @@ void search(Tomato** tomatoBox, queue<Tomato*> que, const Position& limitPos)
 	}
 }
 
-void searchAll(Tomato** tomatoBox, const Position& limitPos)
+void searchAll(Tomato** tomatoBox, const Apartment& limitPos)
 {
 	queue<Tomato*> que;
 
@@ -93,7 +93,7 @@ void searchAll(Tomato** tomatoBox, const Position& limitPos)
 	search(tomatoBox, que, limitPos);
 }
 
-int getTimeCost(Tomato** tomatoBox, const Position& limitPos)
+int getTimeCost(Tomato** tomatoBox, const Apartment& limitPos)
 {
 	int max = 0;
 	for (int j = 0; j < limitPos.row; j++)
@@ -121,7 +121,7 @@ int main()
 
 	scanf("%d %d", &M, &N);
 
-	Position limitPos(N, M);
+	Apartment limitPos(N, M);
 	Tomato** tomatoBox = new Tomato *[N];
 
 

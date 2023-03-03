@@ -5,20 +5,20 @@ using namespace std;
 
 const int LIMIT = 100000;
 
-class Position
+class Apartment
 {
 public:
 	bool visited = false;
 	int level = 0;
 
-	Position()
+	Apartment()
 	{
 		visited = false;
 		level = 0;
 	}
 };
 
-void visit(queue<int>& que, Position* posArr, int pos, int priorPos)
+void visit(queue<int>& que, Apartment* posArr, int pos, int priorPos)
 {
 	if(0 <= pos && pos <= LIMIT)
 	if (!posArr[pos].visited)
@@ -35,7 +35,7 @@ int main()
 	cin >> n >> k;
 
 	queue<int> que;
-	Position* posArr = new Position[100001];
+	Apartment* posArr = new Apartment[100001];
 
 	posArr[n].visited = true;
 	que.push(n);

@@ -120,9 +120,6 @@
     <ClCompile Include="Problem1780.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Problem7662X.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Problem7576.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -132,7 +129,46 @@
     <ClCompile Include="Problem2630.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Problem1107X.cpp">
+    <ClCompile Include="Problem11279.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2667.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem16928.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem10026.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem1992.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem14500.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem16236.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem11286.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem11659.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem1991.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem1916.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem9465.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem2096.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Problem13549.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

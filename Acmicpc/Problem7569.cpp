@@ -2,15 +2,15 @@
 #include <queue>
 using namespace std;
 
-class Position {
+class Apartment {
 public:
 	int floor;
 	int row;
 	int col;
 
-	Position() {}
+	Apartment() {}
 
-	Position(int floor, int row, int col)
+	Apartment(int floor, int row, int col)
 	{
 		setPosition(floor, row, col);
 	}
@@ -25,7 +25,7 @@ public:
 
 class Tomato {
 public:
-	Position pos;
+	Apartment pos;
 	int status;
 	bool visited;
 	int level;
@@ -54,7 +54,7 @@ void visit(queue<Tomato*>& tomatoQue, Tomato* tomato, const Tomato* priorTomato)
 	}	
 }
 
-void search(Tomato*** tomatoBox, queue<Tomato*>& tomatoQue, const Position& limitPos)
+void search(Tomato*** tomatoBox, queue<Tomato*>& tomatoQue, const Apartment& limitPos)
 {
 	while (!tomatoQue.empty())
 	{
@@ -80,7 +80,7 @@ void search(Tomato*** tomatoBox, queue<Tomato*>& tomatoQue, const Position& limi
 	}
 }
 
-void searchAll(Tomato*** tomatoBox, const Position& limitPos)
+void searchAll(Tomato*** tomatoBox, const Apartment& limitPos)
 {
 	queue<Tomato*> tomatoQue;
 
@@ -103,7 +103,7 @@ void searchAll(Tomato*** tomatoBox, const Position& limitPos)
 	search(tomatoBox, tomatoQue, limitPos);
 }
 
-int getTimeCost(Tomato*** tomatoBox, const Position& limitPos)
+int getTimeCost(Tomato*** tomatoBox, const Apartment& limitPos)
 {
 	int max = 0;
 	for (int i = 0; i < limitPos.floor; i++)
@@ -134,7 +134,7 @@ int main()
 
 	scanf("%d %d %d", &M, &N, &H);
 	
-	Position limitPos(H, N, M);
+	Apartment limitPos(H, N, M);
 	Tomato*** tomatoBox = new Tomato**[H];
 
 
