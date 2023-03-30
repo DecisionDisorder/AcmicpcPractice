@@ -24,7 +24,7 @@ int Find(int n)
 	if (n == parents[n])
 		return n;
 	else
-		return n = Find(parents[n]);
+		return Find(parents[n]);
 }
 
 // 두 집합을 하나로 합치기
