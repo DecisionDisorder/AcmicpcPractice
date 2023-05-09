@@ -288,5 +288,8 @@
     <ClCompile Include="Problem1987.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Problem3190.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
