@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int n, m, x;
+int n, m, dice_col;
 vector<pair<int, int>> graph[VERTEX_MAX];
 
 int dijkstra(int start, int end)
@@ -47,7 +47,7 @@ int main()
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 	int max_distance = 0;
 
-	cin >> n >> m >> x;
+	cin >> n >> m >> dice_col;
 
 	for (int i = 0; i < m; i++)
 	{
@@ -58,10 +58,10 @@ int main()
 
 	for (int i = 1; i <= n; i++)
 	{
-		if (i != x)
+		if (i != dice_col)
 		{
-			int d = dijkstra(i, x);
-			d += dijkstra(x, i);
+			int d = dijkstra(i, dice_col);
+			d += dijkstra(dice_col, i);
 			if (d > max_distance)
 				max_distance = d;
 		}
